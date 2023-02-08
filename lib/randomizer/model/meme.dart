@@ -11,7 +11,7 @@ class Meme {
     required this.ups,
   });
 
-  Meme fromJson(Map<String, dynamic> json) {
+  static Meme fromJson(Map<String, dynamic> json) {
     return Meme(
       postLink: json["postLink"],
       url: json["url"],

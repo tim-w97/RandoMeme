@@ -14,7 +14,7 @@ class RandomizerFetchFailed extends RandomizerState {
 }
 
 class RandomizerMemeReceived extends RandomizerState {
-  final String json;
+  final Meme meme;
 
-  RandomizerMemeReceived(this.json);
+  RandomizerMemeReceived(this.meme);
 }

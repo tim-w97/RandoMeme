@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as fetcher;
+import 'package:rando_meme/randomizer/model/meme.dart';
 
 class MemeRepository {
-  Future<String> fetchRandomMeme() async {
+  Future<Meme> fetchRandomMeme() async {
     final uri = Uri(scheme: "https", host: "meme-api.com", path: "gimme");
 
     final response = await fetcher.get(uri);
@@ -13,6 +15,9 @@ class MemeRepository {
           "Failed to fetch the meme image. Reason: ${response.reasonPhrase}");
     }
 
-    return response.body;
+    final jsonData = jsonDecode(response.body);
+    Meme meme = Meme.fromJson(jsonData);
+
+    return meme;
   }
 }

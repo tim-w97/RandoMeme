@@ -32,7 +32,7 @@ class RandomizerPage extends StatelessWidget {
                 }
 
                 if (state is RandomizerMemeReceived) {
-                  return Text(state.json);
+                  return Image.network(state.meme.url);
                 }
 
                 if (state is RandomizerFetchFailed) {
