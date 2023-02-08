@@ -4,7 +4,7 @@ import 'package:http/http.dart' as fetcher;
 
 class MemeRepository {
   Future<String> fetchRandomMeme() async {
-    final uri = Uri.https("https://meme-api.com/gimme");
+    final uri = Uri(scheme: "https", host: "meme-api.com", path: "gimme");
 
     final response = await fetcher.get(uri);
 
