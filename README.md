@@ -1,16 +1,5 @@
-# rando_meme
+# RandoMeme
 
-A new Flutter project.
+This is an app I used to learn flutter bloc state management.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Group 1](https://user-images.githubusercontent.com/63613014/217657880-9aaeb81e-71d0-4319-b43d-de024a908612.png)
