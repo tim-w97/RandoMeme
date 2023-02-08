@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rando_meme/randomizer/cubit/randomizer_cubit.dart';
+import 'package:rando_meme/randomizer/meme_repository.dart';
 import 'package:rando_meme/randomizer/randomizer_page.dart';
 
 void main() {
@@ -14,7 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'RandoMeme',
       theme: ThemeData.dark(),
-      home: const RandomizerPage(),
+      home: BlocProvider(
+        create: ((context) =>
+            RandomizerCubit(memeRepository: MemeRepository())),
+        child: const RandomizerPage(),
+      ),
     );
   }
 }

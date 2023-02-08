@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rando_meme/randomizer/cubit/randomizer_cubit.dart';
 
 class RandomizerPage extends StatelessWidget {
   const RandomizerPage({super.key});
@@ -14,12 +16,22 @@ class RandomizerPage extends StatelessWidget {
         title: const Text("RandoMeme 🎲"),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Placeholder(),
-            const SizedBox(height: 20),
-            Text("Author: Backfisch123xX"),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Center(
+            child: BlocBuilder<RandomizerCubit, RandomizerState>(
+              builder: (context, state) {
+                if (state is RandomizerInitial) {
+                  return const Text(
+                    "Press the Button at the bottom right to fetch a new Meme. 🚀",
+                    textAlign: TextAlign.center,
+                  );
+                }
+
+                return const CircularProgressIndicator();
+              },
+            ),
+          ),
         ),
       ),
     );
